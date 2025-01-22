@@ -1,0 +1,989 @@
+/* 모바일에서만 출력되는 부분은 가려주기 */
+#hamburger {
+  display: none;
+}
+
+/* ---------------------------------------------- */
+/* 전체적으로 공통인 부분은 상단에 개별지정영역은 하단에 작성 */
+.header_area .container,
+.banner .container {
+  width: 1400px;
+  margin: 0 auto;
+}
+
+.header_area {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 500;
+
+  height: 80px;
+  background-color: #fff;
+  width: 100%;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+
+  border-bottom: 1px solid #222;
+}
+
+.header_area .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+
+  position: relative;
+}
+
+.header_area .header_logo {
+  width: 164px;
+  height: 24px;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.header_area .main_menu,
+.header_area .icon_box {
+  display: flex;
+  gap: 24px;
+}
+
+/* ------------------------------------ */
+/* header scroll event */
+.header_area.scroll {
+  position: fixed;
+  height: auto;
+  padding: 20px 0px;
+
+  animation: scroll 0.3s linear;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* ------------------------------------ */
+/* banner */
+.banner {
+  background-color: #222;
+}
+
+.video_banner {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.video_banner .video_box {
+  width: 33.333%;
+  height: 356px;
+}
+
+/* ------------------------------------ */
+.sub_menu_box {
+  /* display: none; */
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 540px;
+  background-color: #fff;
+
+  opacity: 0;
+  z-index: -1;
+  transition: 0.3s;
+}
+/* ------------------------------------ */
+/* sub_menu_box active */
+.sub_menu_box.active {
+  opacity: 1;
+  z-index: 99;
+}
+
+.sub_menu_box .sub_menu.active {
+  opacity: 1;
+}
+
+/* ------------------------------------ */
+/* 서브메뉴 하나씩 확인 */
+/* .sub_menu_box .sub_menu.about {
+  opacity: 1;
+} */
+/* ------------------------------------ */
+
+.sub_menu_box .sub_menu {
+  /* display: none; */
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 100%;
+  padding-bottom: 80px;
+
+  width: 1400px;
+
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+
+  text-transform: uppercase;
+
+  opacity: 0;
+
+  transition: 0.3s;
+}
+/* ------------------------------------ */
+/* 서브메뉴 박스 공통 영역 */
+.sub_menu_box .sub_menu_head {
+  font-size: 0.875rem;
+  color: #222;
+  font-weight: 400;
+}
+
+.sub_menu_box .sub_menu_body {
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: #a2a2a2;
+  margin-top: 8px;
+}
+
+.sub_menu_box .photo img {
+  object-position: center top;
+}
+
+/* ------------------------------------ */
+/* women,men */
+.sub_menu_box .women .menu_left,
+.sub_menu_box .men .menu_left {
+  display: flex;
+
+  width: 930px;
+  height: 362px;
+}
+
+.sub_menu_box .women .sub_menu_detail,
+.sub_menu_box .men .sub_menu_detail {
+  width: 33.333%;
+}
+
+.sub_menu_box .women .photo,
+.sub_menu_box .men .photo {
+  width: 335px;
+  height: 362px;
+}
+
+/* ------------------------------------ */
+/* collections */
+.sub_menu_box .collections .photo {
+  width: 310px;
+  height: 368px;
+}
+
+.sub_menu_box .collections .menu_left {
+  height: 368px;
+}
+
+.sub_menu_box .collections .sub_menu_detail {
+  margin-bottom: 8px;
+}
+
+/* ------------------------------ */
+/* about */
+.sub_menu_box .sub_menu.about {
+  gap: 20px;
+}
+
+.sub_menu_box .about .sub_menu_detail {
+  width: 33.333%;
+}
+
+.sub_menu_box .about .photo {
+  width: 100%;
+  height: 300px;
+}
+
+.sub_menu_box .about p {
+  margin-top: 12px;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+/* ------------------------------ */
+/* main_section */
+.main_section .container {
+  width: 1200px;
+  margin: 0 auto;
+  padding-top: 68px;
+  padding-bottom: 68px;
+}
+
+/* ------------------------------ */
+/* main_section 공통 텍스트 */
+.main_section .headtext {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+
+  padding-bottom: 8px;
+  margin-bottom: 40px;
+
+  display: inline-block;
+  /* 하단밑줄 너비때문에 설정 */
+}
+
+.main_section .headtext.underline {
+  border-bottom: 1px solid #a2a2a2;
+}
+
+/* main_section 공통 서브텍스트 */
+.main_section .subtext {
+  font-family: "EB Garamond", serif;
+}
+
+/* ----------------------------- */
+/* sec1 */
+.sec_1 .container {
+  padding-top: 200px;
+}
+
+.sec_1 .ex_top {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* display 가 어떤 요소던 가운데 정렬하기 위함 */
+}
+
+.sec_1 .headtext {
+  padding-bottom: 0;
+}
+
+.sec_1 .subtext.top {
+  margin-bottom: 16px;
+}
+
+.sec_1 .subtext.bottom {
+  margin-bottom: 68px;
+}
+
+.sec_1 .ex_image {
+  width: 100%;
+  height: 800px;
+
+  margin-bottom: 86px;
+}
+
+/* gap 사용해서 .ex_center .subtext 를 너비값 설정해서 가로정렬해주세요! */
+.sec_1 .ex_center {
+  display: flex;
+  gap: 20px;
+
+  margin-bottom: 100px;
+}
+
+.sec_1 .ex_center .subtext {
+  width: 50%;
+}
+
+.sec_1 .ex_bottom {
+  display: flex;
+  gap: 122px;
+  align-items: center;
+}
+
+.sec_1 .ex_bottom .bottom_image {
+  width: 488px;
+  height: 658px;
+
+  flex-shrink: 0;
+  /* flex의 영향으로 줄어드는 부분이 없게 처리 */
+}
+
+/* ------------------------------- */
+/* sec2 */
+/* 배경컬러를 sec2가 아니라 body 전체 컬러를 변경 */
+
+/* .sec_2 {
+  background-color: #b5b0ad;
+} */
+
+body {
+  transition: 0.3s;
+}
+
+body.bg {
+  background-color: #b5b0ad;
+}
+
+.sec_2 .collection_top {
+  color: #fff;
+}
+
+.main_section.sec_2 .headtext {
+  border-color: #fff;
+}
+
+.sec_2 .col_text {
+  display: flex;
+  gap: 20px;
+}
+
+.sec_2 .subtext {
+  width: 50%;
+  margin-bottom: 68px;
+  font-weight: 300;
+}
+
+.sec_2 .collection_bottom {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.sec_2 .collection_bottom .content {
+  /* width: 33.333%; */
+  /* width: calc(33.333% - 20px); */
+  /* flex-wrap:wrap; 을 사용하는 경우 하단 여백도 gap으로 들어가면서 한줄에 원하는 객체 갯수만큼 들어가지 않음 -> calc 식으로 계산 해주는데 기존 방식을 사용하면 전체 부모에서 다시 gap 여백을 하나 빼줘야함 */
+  /* 따라서 하단처럼 여백을 먼저 빼주고 원하는 객체의 갯수만큼 나눠줌 */
+  width: calc((100% - 40px) / 3);
+  height: 512px;
+  background-color: #222;
+
+  /* gap은 우측여백만 설정되는것이 아니라 flex 컨테이너에 영향을 받는 모든 공간에 여백을 추가해줌 -> 때문에 margin-bottom 생략 */
+}
+
+.sec_2 .collection_bottom .con1 {
+  background: url(../image/fw_01.jpg) no-repeat center top / cover;
+}
+
+.sec_2 .collection_bottom .con2 {
+  background: url(../image/fw_02.jpg) no-repeat center top / cover;
+}
+
+.sec_2 .collection_bottom .con3 {
+  background: url(../image/fw_03.jpg) no-repeat center top / cover;
+}
+
+.sec_2 .collection_bottom .con4 {
+  background: url(../image/fw_04.jpg) no-repeat center top / cover;
+}
+
+.sec_2 .collection_bottom .con5 {
+  background: url(../image/fw_05.jpg) no-repeat center top / cover;
+}
+
+.sec_2 .collection_bottom .con6 {
+  background: url(../image/fw_06.jpg) no-repeat center top / cover;
+}
+
+.sec_2 .collection_bottom .con7 {
+  background: url(../image/fw_07.jpg) no-repeat center top / cover;
+}
+
+.sec_2 .collection_bottom .con8 {
+  background: url(../image/fw_08.jpg) no-repeat center top / cover;
+}
+
+.sec_2 .collection_bottom .con9 {
+  background: url(../image/fw_09.jpg) no-repeat center top / cover;
+}
+
+/* --------------------------- */
+/* sec3 */
+.sec_3 .ceo_top {
+  display: flex;
+  justify-content: center;
+}
+
+.sec_3 .ceoSwiper {
+  width: 794px;
+  height: 479px;
+
+  overflow: hidden;
+}
+
+.sec_3 .slider_wrap {
+  width: 400%;
+  height: 100%;
+
+  display: flex;
+}
+
+.sec_3 .slide_inner {
+  width: 25%;
+  height: 100%;
+}
+
+.sec_3 .slide_inner img {
+  object-position: center top;
+}
+
+.sec_3 .ceo_bottom {
+  margin-top: 60px;
+
+  display: flex;
+  gap: 20px;
+}
+
+.sec_3 .headtext {
+  margin-bottom: 32px;
+}
+
+.sec_3 .text_box {
+  width: 50%;
+}
+
+/* --------------------- */
+/* sec4 */
+.sec_4 .container {
+  padding-bottom: 200px;
+}
+
+.sec_4 .headtext {
+  margin-bottom: 32px;
+}
+
+.sec_4 .shop_content {
+  display: flex;
+  gap: 20px;
+}
+
+.sec_4 .content {
+  width: 33.333%;
+  height: 512px;
+
+  position: relative;
+
+  transition: 0.3s;
+}
+
+.sec_4 .shop_detail {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.sec_4 .content:hover .shop_detail {
+  opacity: 1;
+}
+
+.sec_4 .content:hover {
+  transform: translateY(-20px);
+}
+
+.sec_4 .shop_inner {
+  color: #fff;
+  text-align: center;
+  font-family: "EB Garamond", serif;
+}
+
+.sec_4 .shop_inner .headtext {
+  font-size: 1.125rem;
+  font-weight: 400;
+  padding-bottom: 6px;
+  margin-bottom: 4px;
+}
+
+.sec_4 .shop_inner .address {
+  font-size: 0.75rem;
+  font-weight: 100;
+  /* 기울기처리 */
+  font-style: italic;
+  letter-spacing: 1.5px;
+  width: 172px;
+}
+
+/* ------------------------ */
+/* footer */
+.footer {
+  border-top: 0.5px solid #dbdbdb;
+}
+
+.footer .container {
+  width: 1600px;
+  margin: 0 auto;
+  text-transform: uppercase;
+  padding-top: 36px;
+  padding-bottom: 16px;
+  letter-spacing: 1.5px;
+}
+
+.footer .footer_t {
+  display: flex;
+}
+
+.footer .footer_t .box {
+  width: 20%;
+  height: 300px;
+  padding: 16px;
+}
+
+.footer .footer_t .box h1 {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #222;
+  margin-bottom: 16px;
+}
+
+.footer .footer_t .box p {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #6a6a6a;
+  margin-bottom: 8px;
+}
+
+.footer .footer_t input {
+  padding: 8px 4px;
+  border-bottom: 1px solid #c7c7c7;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.footer .footer_t input::placeholder {
+  color: #c7c7c7;
+  font-size: 0.75rem;
+
+  opacity: 1;
+  transition: 0.3s;
+}
+
+.footer .footer_t input:focus::placeholder {
+  opacity: 0;
+}
+
+.footer .footer_t .footer_btn {
+  width: 100%;
+  height: 36px;
+  background-color: #f4f4f4;
+
+  font-size: 0.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: 0.3s;
+}
+
+.footer .footer_t .footer_btn:hover {
+  background-color: #ededed;
+}
+
+.footer .footer_b .copyright {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* 상단이동버튼 */
+/* 너비 높이 90px 짜리 밖에 부분만 돌아가는 상단이동버튼 만들어주기 오른쪽에서 20px 하단에서 40px 떨어져있도록 처리 */
+/* 가상요소로 너비 높이 70px 짜리 Lemaire_topbtn-i-black.svg이미지 넣어주기 위치는 상단과 좌측에서 10px씩 떨어져있도록 처리 */
+/* 밖에 있는 도형만 돌아가게 처리해보기 */
+.top_btn {
+  width: 90px;
+  height: 90px;
+
+  position: fixed;
+  right: 20px;
+  bottom: 40px;
+
+  cursor: pointer;
+
+  opacity: 0;
+  z-index: -1;
+  transition: 0.3s;
+}
+
+.top_btn.on {
+  opacity: 1;
+  z-index: 9999;
+}
+
+.top_btn::after {
+  content: "";
+  background: url(../image/Lemaire_topbtn-i-black.svg) no-repeat center / cover;
+  width: 70px;
+  height: 70px;
+
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.top_btn img {
+  animation: topbtn 30s linear infinite;
+}
+
+@keyframes topbtn {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* ----------------------- */
+/* 반응형 미디어쿼리 */
+@media (max-width: 1600px) {
+  .header_area .container,
+  .banner .container,
+  .footer .container {
+    width: 100%;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  /* .sub_menu 는 고정영역이고 모바일메뉴로 변경되는 부분이기때문에 고정값으로 설정해두고 나중에 뺄거임 */
+  .sub_menu_box .sub_menu {
+    width: 1200px;
+  }
+}
+
+/* ----------------------- */
+@media (max-width: 1420px) {
+  .video_banner {
+    height: 650px;
+  }
+
+  .main_section .container {
+    width: 100%;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  .sub_menu_box,
+  .header_area .icon_box {
+    display: none;
+  }
+
+  .header_area .main_menu {
+    width: 100%;
+    height: 100vh;
+
+    background-color: rgba(255, 255, 255, 0.8);
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /* 폰트 사이즈를 vw 로 바꾸는 방법 -> 폰트를 웹사이트 구축할때 생각없이 vw단위로 전부 바꾸면 화면너비에 따라 텍스트가 비정상적으로 작아지는 경우가 있을 수 있음(지금 메인메뉴는 화면 전체를 기준으로 고정되어있고 텍스트 영역밖에 없기때문에 vw 단위로 변환하는 것이 편함 */
+
+    /* 화면너비 / 100 = 값 */
+    /* 원하는 화면너비에서 지정하고싶은 폰트사이즈 / 값 = 최종값vw */
+
+    /* 85px을 vw 단위로 변경한다면? */
+    /* 1420 / 100 = 14.2 */
+    /* 85 / 14.2 = 5.985vw */
+    font-size: 5.985vw;
+
+    transform: translateY(-100%);
+    transition: 0.3s;
+  }
+
+  #hamburger {
+    display: block;
+    width: 20px;
+    height: 10px;
+    position: relative;
+
+    z-index: 99999;
+  }
+
+  #hamburger span {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #222;
+
+    transition: 0.3s;
+  }
+
+  #hamburger span:first-child {
+    top: 0;
+    left: 0;
+  }
+
+  #hamburger span:last-child {
+    top: 100%;
+    left: 0;
+  }
+
+  /* --------------------- */
+  /* 햄버거버튼, 메인메뉴 active */
+  .header_area .main_menu.active {
+    transform: translateY(0);
+  }
+
+  #hamburger.active span:first-child {
+    transform: translateY(10px);
+  }
+
+  #hamburger.active span:last-child {
+    transform: translateY(-10px);
+  }
+
+  /* --------------------- */
+  .sec_1 .ex_image {
+    margin-bottom: 40px;
+  }
+  .sec_1 .ex_center {
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-bottom: 40px;
+  }
+  .sec_1 .ex_center .subtext {
+    width: 100%;
+  }
+
+  /* --------------------- */
+  .footer .footer_t {
+    flex-wrap: wrap;
+  }
+
+  .footer .footer_t .box {
+    width: 50%;
+  }
+
+  .footer .footer_t .box:nth-child(1),
+  .footer .footer_t .box:nth-child(2),
+  .footer .footer_t .box:nth-child(4) {
+    display: none;
+  }
+}
+
+/* --------------------------------- */
+@media (max-width: 960px) {
+  /* .sec_1 .ex_bottom 세로 정렬로 바꿔주고 이미지 밑에 텍스트 배치해보기 둘 사이 여백 32px */
+  .sec_1 .ex_bottom {
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+    gap: 32px;
+  }
+
+  .sec_1 .ex_bottom .bottom_image {
+    width: 100%;
+  }
+
+  /* ---------------------- */
+  .sec_2 .collection_bottom .content {
+    width: calc((100% - 20px) / 2);
+  }
+
+  /* ---------------------- */
+  .sec_3 .ceoSwiper {
+    width: 100%;
+  }
+}
+
+/* ----------------------------- */
+@media (max-width: 760px) {
+  .header_area .container,
+  .banner .container,
+  .main_section .container,
+  .footer .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  /* ---------------------- */
+
+  .video_banner {
+    height: auto;
+    padding: 150px 0px;
+  }
+
+  .video_banner .video_box.box2,
+  .video_banner .video_box.box3 {
+    display: none;
+  }
+
+  .video_banner .video_box {
+    width: 100%;
+  }
+  /* ---------------------- */
+
+  .header_area {
+    height: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .header_area .header_logo {
+    width: 110px;
+    height: 18px;
+  }
+
+  #hamburger {
+    width: 16px;
+    height: 8px;
+  }
+
+  #hamburger.active span:first-child {
+    transform: translateY(8px);
+  }
+
+  #hamburger.active span:last-child {
+    transform: translateY(-8px);
+  }
+
+  /* ---------------------- */
+  .sec_2 .col_text {
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+
+  .sec_2 .subtext {
+    width: 100%;
+    margin-bottom: 0;
+  }
+
+  .sec_2 .collection_bottom {
+    gap: 8px;
+  }
+
+  .sec_2 .collection_bottom .content {
+    width: calc((100% - 8px) / 2);
+    /* ***gap 사이즈 변경되면 유동값으로 처리했던 너비값도 수정 */
+  }
+
+  /* ---------------------- */
+  .sec_3 .ceoSwiper {
+    height: 360px;
+  }
+
+  .sec_3 .ceo_bottom {
+    flex-direction: column;
+    margin-top: 32px;
+    gap: 32px;
+  }
+
+  .sec_3 .text_box {
+    width: 100%;
+  }
+
+  /* ---------------------- */
+  .sec_4 .container {
+    padding-bottom: 20px;
+  }
+
+  .sec_4 .shop_content {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  /* .content 호버 막아주고 레이아웃 바꿔주기 */
+  .sec_4 .content {
+    width: 100%;
+    pointer-events: none;
+    /* 호버 막아주는 속성은 걸려있는 객체 본인에게 설정 -> 호버걸린 부분에 적용하지 않음 */
+    height: auto;
+  }
+
+  .sec_4 .content img {
+    height: 560px;
+    /* .sec_4 .shop_detail 에 포지션이 해제되면서 전체 묶는 박스에 높이값 있으면 안됨 -> img 에 따로 강제적으로 설정 */
+  }
+
+  .sec_4 .shop_detail {
+    position: static;
+    /* position 풀어주는 속성 */
+    height: auto;
+    opacity: 1;
+    background-color: transparent;
+  }
+
+  .sec_4 .shop_inner {
+    color: #222;
+    text-align: left;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .sec_4 .shop_inner .headtext {
+    border-bottom: none;
+  }
+
+  /* 주소 너비값 지정해서 텍스트 점처리 */
+  .sec_4 .shop_inner .address {
+    width: auto;
+    max-width: 60%;
+    font-size: 0.9rem;
+    font-style: normal;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* --------------------------- */
+  .footer .footer_t {
+    display: none;
+  }
+
+  .footer .container {
+    padding-top: 16px;
+  }
+  /* --------------------------- */
+
+  .top_btn {
+    bottom: 20px;
+    width: 80px;
+    height: 80px;
+  }
+
+  .top_btn::after {
+    top: 5px;
+    left: 5px;
+  }
+}
+/* --------------------------- */
+@media (max-width: 760px) {
+  .banner .container {
+    padding: 0;
+  }
+
+  .sec_1 .container {
+    padding-top: 86px;
+  }
+
+  .sec_1 .ex_image,
+  .sec_1 .ex_bottom .bottom_image {
+    height: 400px;
+  }
+
+  .sec_2 .collection_bottom .content {
+    width: 100%;
+    height: 500px;
+  }
+}
+
+/* 햄버거 버튼 조작해놓은것 스크립트로 클릭할때마다 나왔다가 들어가게 처리하기 */
+/* github 가입하기(가입할때 가입한 이름과 이메일 저장해놓기 - 필요함) */
